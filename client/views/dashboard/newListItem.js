@@ -1,15 +1,16 @@
 Template.newListItem.events({
-	'click #submit' : function(e) {
+	'submit form' : function(e) {
 		e.preventDefault();
-		var x = $('[name=newItem]').val();
+		var x = $('[name=newItem]');
 		 
 		var item = {
-			item: x,
+			item: x.val(),
 			purchased: false,
 			listId: this._id,
 			submitted: new Date()
 		}
 
 		Items.insert(item);
+		x.val("");
 	}
 });

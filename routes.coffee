@@ -5,6 +5,9 @@ Router.map ->
   @route 'dashboard',
     path: '/dashboard'
 
+  @route 'newList',
+    path: '/dashboard/new'
+
   @route 'listPage',
     path: '/dashboard/:_id'
     data: ->
