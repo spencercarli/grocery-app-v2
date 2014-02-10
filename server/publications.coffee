@@ -3,3 +3,8 @@ Meteor.publish 'lists', ->
 
 Meteor.publish 'items', ->
 	Items.find()
+
+Items.allow {
+	update: (userId, doc, fields, modifier) ->
+		return true
+}

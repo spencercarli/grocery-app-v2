@@ -7,10 +7,14 @@ Template.listPage.helpers({
 });
 
 Template.listItem.events({
-	'click #complete': function(e){
-		
-		Items.update({ id: this._id}, {
+	'click button': function(e){
+		e.preventDefault();
+		$('.'+ this._id).toggleClass('btn-danger');
+
+		var x = Items.findOne(this._id);
+		Items.update({ _id: this._id },{$set: {
 			purchased: true
-		});
+		}});
+		alert(x.purchased);
 	}
 });
