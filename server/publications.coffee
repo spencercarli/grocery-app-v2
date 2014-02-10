@@ -1,2 +1,5 @@
 Meteor.publish 'lists', ->
-	Lists.find();
+	Lists.find()
+
+Meteor.publish 'items', ->
+	Items.find()
