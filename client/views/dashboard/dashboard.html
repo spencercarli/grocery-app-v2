@@ -1,8 +1,14 @@
 <template name="dashboard">
-  <h1>Hello</h1>
-  <a href="{{pathFor 'newList'}}">New Shopping List</a>
-  <br>
-  {{#each list}}
-  	<a href="{{ pathFor 'listPage' }}">{{title}}</p>
-  {{/each}}
+  <div class="row">
+    <h1>Your Shopping Lists <a href="{{pathFor 'newList'}}" class="btn btn-primary pull-right">New Shopping List</a></h1>
+  </div>
+  <hr>
+
+  <ul>
+    {{#each list}}
+      <li>
+        <a href="{{ pathFor 'listPage' }}">{{title}}</a>
+      </li>
+    {{/each}}
+  </ul>
 </template>

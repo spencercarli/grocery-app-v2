@@ -1,6 +1,10 @@
 <template name="newListItem">
-	<form id="newItem">
-		<input type="text" name="newItem" >
-		<input type="submit" value="Add" id="submit">
+	<form role="form">
+		<div class="input-group">
+			<input type="text" class="form-control" name="newItem" placeholder="New Item">
+			 <span class="input-group-btn">
+			 	<button type="submit" id="submit" class="btn btn-primary">Add</button>
+			 </span>
+		</div>
 	</form>
 </template>

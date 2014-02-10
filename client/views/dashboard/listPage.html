@@ -1,7 +1,16 @@
 <template name="listPage">
-	<h3>{{title}}</h3>
-	{{> newListItem}}
-	{{#each items}}
-		{{item}} -- {{listId}} <br>
-	{{/each}}
+	<div class="row">
+		<h3>{{title}}</h3>
+	</div>
+	<hr>
+	<div class="row">
+		{{> newListItem}}
+		<ul>
+			{{#each items}}
+				<li>
+					{{item}} -- {{listId}}
+				</li>
+			{{/each}}}
+		</ul>
+	</div>
 </template>
