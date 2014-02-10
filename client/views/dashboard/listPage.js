@@ -2,6 +2,6 @@ Meteor.subscribe('items');
 
 Template.listPage.helpers({
 	items: function(){
-		return Items.find({ listId : this._id })
+		return Items.find({ listId : this._id }, {sort: {submitted: -1}});
 	}
 });
