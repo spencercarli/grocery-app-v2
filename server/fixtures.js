@@ -7,11 +7,15 @@ if (Lists.find().count() === 0){
 
 	Items.insert({
 		item: 'item 1 for title 1',
-		listId : x
+		purchased: false,
+		listId : x,
+		submitted: new Date()
 	});
 
 	Items.insert({
 		item: 'item 2 for title 1',
-		listId : x
+		purchased: false,
+		listId : x,
+		submitted: new Date()
 	});
 }

@@ -7,7 +7,7 @@ Template.newListItem.events({
 			item: x,
 			purchased: false,
 			listId: this._id,
-			submitted: new Date();
+			submitted: new Date()
 		}
 
 		Items.insert(item);
