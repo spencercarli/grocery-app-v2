@@ -1,6 +1,6 @@
 Template.newList.events({
 	'submit form': function(e){
-		// e.preventDefault();
+		e.preventDefault();
 		var name = $('[name=listName]');
 
 		var list = {

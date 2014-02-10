@@ -7,10 +7,15 @@
 		{{> newListItem}}
 		<ul>
 			{{#each items}}
-				<li>
-					{{item}} -- {{listId}}
-				</li>
+				{{> listItem}}
 			{{/each}}}
 		</ul>
 	</div>
+</template>
+
+<template name="listItem">
+	<li>
+		<input type="checkbox" id="complete"> {{item}} <br>
+		{{purchased}}
+	</li>
 </template>
