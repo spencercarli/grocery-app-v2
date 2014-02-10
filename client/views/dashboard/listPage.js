@@ -6,15 +6,25 @@ Template.listPage.helpers({
 	}
 });
 
+Template.listItem.rendered = function(){
+	if (this.data.purchased) {
+		$('.'+ this.data._id).addClass('btn-danger');
+	}
+};
+
 Template.listItem.events({
 	'click button': function(e){
 		e.preventDefault();
 		$('.'+ this._id).toggleClass('btn-danger');
 
-		var x = Items.findOne(this._id);
-		Items.update({ _id: this._id },{$set: {
-			purchased: true
-		}});
-		alert(x.purchased);
+		if (this.purchased == false){
+			Items.update({ _id: this._id },{$set: {
+				purchased: true
+			}});
+		} else {
+			Items.update({ _id: this._id },{$set: {
+				purchased: false
+			}});
+		}
 	}
 });
