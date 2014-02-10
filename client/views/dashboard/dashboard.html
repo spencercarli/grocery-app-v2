@@ -1,6 +1,6 @@
 <template name="dashboard">
   <h1>Hello</h1>
   {{#each list}}
-  	<p>{{title}}</p>
+  	<a href="{{ pathFor 'listPage' }}">{{title}}</p>
   {{/each}}
 </template>

@@ -5,6 +5,11 @@ Router.map ->
   @route 'dashboard',
     path: '/dashboard'
 
+  @route 'listPage',
+    path: '/dashboard/:_id'
+    data: ->
+      Lists.findOne this.params._id
+
   @route 'notFound',
     path: '*'
     where: 'server'
