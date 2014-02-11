@@ -8,14 +8,13 @@ Template.listPage.helpers({
 
 Template.listItem.rendered = function(){
 	if (this.data.purchased) {
-		$('.'+ this.data._id).addClass('btn-danger');
+		$('.'+ this.data._id).addClass('btn-warning');
 	}
 };
 
 Template.listItem.events({
 	'click button': function(e){
 		e.preventDefault();
-		$('.'+ this._id).toggleClass('btn-danger');
 
 		if (this.purchased == false){
 			Items.update({ _id: this._id },{$set: {
