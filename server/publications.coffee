@@ -9,6 +9,8 @@ Items.allow {
 		return true
 	update: (userId, doc, fields, modifier) ->
 		return true
+	remove: (userId, doc) ->
+		return true
 }
 
 Lists.allow {

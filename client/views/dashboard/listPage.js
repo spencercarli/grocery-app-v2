@@ -13,7 +13,7 @@ Template.listItem.rendered = function(){
 };
 
 Template.listItem.events({
-	'click button': function(e){
+	'click #purch': function(e){
 		e.preventDefault();
 
 		if (this.purchased == false){
@@ -25,5 +25,11 @@ Template.listItem.events({
 				purchased: false
 			}});
 		}
+	},
+
+	'click #delete': function(e){
+		e.preventDefault();
+		
+		Items.remove({ _id: this._id });
 	}
 });

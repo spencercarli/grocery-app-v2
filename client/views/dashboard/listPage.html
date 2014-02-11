@@ -16,6 +16,7 @@
 <template name="listItem">
 	<li>
 		{{item}} -- {{purchased}}
-		<button class="btn btn-primary pull-right {{_id}}">Got it</button>
+		<button class="btn btn-danger pull-right" id="delete" >Don't need it</button>
+		<button class="btn btn-primary pull-right {{_id}}" id="purch">Got it</button>
 	</li>
 </template>
