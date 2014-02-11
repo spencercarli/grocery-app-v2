@@ -34,7 +34,11 @@
 		</div>
 		<div class="col-md-3 col-sm-12">
 			<button class="btn btn-danger pull-right" id="delete" >Don't need it</button>
-			<button class="btn btn-primary pull-right {{_id}}" id="purch">Got it</button>
+			{{#if this.purchased}}
+				<button class="btn btn-primary pull-right {{_id}}" id="purch">Need More</button>
+			{{else}}
+				<button class="btn btn-primary pull-right {{_id}}" id="purch">Got it</button>
+			{{/if}}
 		</div>
 	</div>
 </template>
