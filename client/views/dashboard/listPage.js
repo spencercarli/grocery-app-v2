@@ -1,8 +1,16 @@
 Meteor.subscribe('items');
 
 Template.listPage.helpers({
-	items: function(){
-		return Items.find({ listId : this._id }, {sort: {submitted: -1}});
+	need: function(){
+		return Items.find({ listId : this._id, purchased: false, needed:true }, {sort: {submitted: -1}});
+	},
+
+	incart: function(){
+		return Items.find({ listId : this._id, purchased: true, needed:true }, {sort: {submitted: -1}});
+	},
+
+	trashed: function(){
+		return Items.find({ listId : this._id, needed: false }, {sort: {submitted: -1}});
 	}
 });
 
@@ -29,7 +37,17 @@ Template.listItem.events({
 
 	'click #delete': function(e){
 		e.preventDefault();
+
+		if (this.needed == false){
+			Items.update({ _id: this._id },{$set: {
+				needed: true
+			}});
+		} else {
+			Items.update({ _id: this._id },{$set: {
+				needed: false
+			}});
+		}
 		
-		Items.remove({ _id: this._id });
+		// Items.remove({ _id: this._id });
 	}
 });

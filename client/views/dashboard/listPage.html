@@ -11,9 +11,20 @@
 		</div>
 	</div>
 
-	{{#each items}}
+	<p class="lead">Need</p>
+	{{#each need}}
 		{{> listItem}}
 	{{/each}}}
+
+	<p class="lead">Have in Cart</p>
+	{{#each incart}}
+		{{>listItem}}
+	{{/each}}
+
+	<p class="lead">Not this time</p>
+	{{#each trashed}}
+		{{>listItem}}
+	{{/each}}
 </template>
 
 <template name="listItem">

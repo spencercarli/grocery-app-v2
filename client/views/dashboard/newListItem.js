@@ -6,6 +6,7 @@ Template.newListItem.events({
 		var item = {
 			item: x.val(),
 			purchased: false,
+			needed: true,
 			listId: this._id,
 			submitted: new Date()
 		}
