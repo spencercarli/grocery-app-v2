@@ -5,6 +5,13 @@ Meteor.publish 'items', ->
 	Items.find()
 
 Items.allow {
+	insert: (userId, doc) ->
+		return true
 	update: (userId, doc, fields, modifier) ->
+		return true
+}
+
+Lists.allow {
+	insert: (userId, doc) ->
 		return true
 }
