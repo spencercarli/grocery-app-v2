@@ -31,4 +31,6 @@ Router.before mustBeSignedIn,
     "home"
     "entrySignIn"
     "entrySignUp"
+    "entryForgotPassword"
+    "entryResetPassword"
   ]
