@@ -1,22 +1,29 @@
 <template name="listPage">
 	<div class="row">
-		<h3>{{title}}</h3>
+		<div class="col-md-12">
+			<h3>{{title}}</h3>
+		</div>
 	</div>
 	<hr>
 	<div class="row">
-		{{> newListItem}}
-		<ul>
-			{{#each items}}
-				{{> listItem}}
-			{{/each}}}
-		</ul>
+		<div class="col-md-12">
+			{{> newListItem}}
+		</div>
 	</div>
+
+	{{#each items}}
+		{{> listItem}}
+	{{/each}}}
 </template>
 
 <template name="listItem">
-	<li>
-		{{item}} -- {{purchased}}
-		<button class="btn btn-danger pull-right" id="delete" >Don't need it</button>
-		<button class="btn btn-primary pull-right {{_id}}" id="purch">Got it</button>
-	</li>
+	<div class="row item">
+		<div class="col-md-9 col-sm-12">
+			{{item}} -- {{purchased}}
+		</div>
+		<div class="col-md-3 col-sm-12">
+			<button class="btn btn-danger pull-right" id="delete" >Don't need it</button>
+			<button class="btn btn-primary pull-right {{_id}}" id="purch">Got it</button>
+		</div>
+	</div>
 </template>
