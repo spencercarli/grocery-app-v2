@@ -5,7 +5,8 @@ Template.newList.events({
 
 		var list = {
 			submitted: new Date(),
-			title: name.val()
+			title: name.val(),
+			owner: Meteor.user()._id
 		}
 
 		list._id = Lists.insert(list);
