@@ -1,4 +1,10 @@
 <template name="home">
   <h1>Grocery app</h1>
   <h3>Make grocery shopping easier</h3>
+  {{#if currentUser}}
+  	<a href="{{pathFor 'dashboard'}}" class="btn btn-primary">Go to dash</a>
+  {{else}}
+  	<a href="/sign-in" class="btn btn-primary">Sign In</a>
+  {{/if}}
+  <a href="/sign-up" class="btn btn-success">Sign Up</a>
 </template>
