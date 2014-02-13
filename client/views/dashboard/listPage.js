@@ -1,4 +1,4 @@
-Meteor.subscribe('items');
+// Meteor.subscribe('items', _id);
 
 Template.listPage.helpers({
 	need: function(){

@@ -12,6 +12,10 @@ Router.map ->
     path: '/dashboard/:_id'
     data: ->
       Lists.findOne this.params._id
+    before: [
+      ->
+        Meteor.subscribe 'items', this.params._id
+    ]
 
   @route 'notFound',
     path: '*'
