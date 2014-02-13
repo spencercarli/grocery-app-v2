@@ -1,5 +1,5 @@
-Meteor.publish 'lists', ->
-	Lists.find()
+Meteor.publish 'lists', (userId) ->
+	Lists.find { owner:userId }
 
 Meteor.publish 'items', ->
 	Items.find()

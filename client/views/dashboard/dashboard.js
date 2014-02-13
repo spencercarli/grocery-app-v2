@@ -1,4 +1,4 @@
-Meteor.subscribe('lists');
+Meteor.subscribe('lists', Meteor.userId());
 
 Template.dashboard.helpers({
   list: function() {
