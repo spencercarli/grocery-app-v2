@@ -1,5 +1,3 @@
-// Meteor.subscribe('items', _id);
-
 Template.listPage.helpers({
 	need: function(){
 		return Items.find({ listId : this._id, purchased: false, needed:true }, {sort: {submitted: -1}});
