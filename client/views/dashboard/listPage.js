@@ -1,14 +1,14 @@
 Template.listPage.helpers({
 	need: function(){
-		return Items.find({ listId : this._id, purchased: false, needed:true }, {sort: {submitted: -1}});
+		return Items.find({ purchased: false, needed:true }, {sort: {submitted: -1}});
 	},
 
 	incart: function(){
-		return Items.find({ listId : this._id, purchased: true, needed:true }, {sort: {submitted: -1}});
+		return Items.find({ purchased: true, needed:true }, {sort: {submitted: -1}});
 	},
 
 	trashed: function(){
-		return Items.find({ listId : this._id, needed: false }, {sort: {submitted: -1}});
+		return Items.find({ needed: false }, {sort: {submitted: -1}});
 	}
 });
 
