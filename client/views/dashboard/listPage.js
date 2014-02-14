@@ -45,7 +45,5 @@ Template.listItem.events({
 				needed: false
 			}});
 		}
-		
-		// Items.remove({ _id: this._id });
 	}
 });
