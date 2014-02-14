@@ -1,4 +1,8 @@
-Meteor.subscribe('lists', Meteor.userId());
+Deps.autorun(function() {
+	Meteor.subscribe('lists', Meteor.userId());
+});
+
+Session.set('userId', Meteor.userId());
 
 Template.dashboard.helpers({
   list: function() {
