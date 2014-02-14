@@ -7,7 +7,9 @@
   <ul>
     {{#each list}}
       <li>
-        <a href="{{ pathFor 'listPage' }}">{{title}}</a>
+        <div class="well">
+          <a href="{{ pathFor 'listPage' }}">{{title}}</a>
+        </div>
       </li>
     {{/each}}
   </ul>
