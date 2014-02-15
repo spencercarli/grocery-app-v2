@@ -15,6 +15,11 @@ Router.map ->
     before: ->
       Meteor.subscribe 'items', this.params._id
 
+  @route 'shareWith',
+    path: '/dashboard/:_id/share'
+    data: ->
+      Lists.findOne this.params._id
+
   @route 'notFound',
     path: '*'
     where: 'server'

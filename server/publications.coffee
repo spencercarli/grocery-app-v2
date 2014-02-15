@@ -1,5 +1,11 @@
 Meteor.publish 'lists', (userId) ->
-	Lists.find { owner:userId }
+	Lists.find { 
+		# owner: userId 
+		sharedWith: userId
+	}
+
+checkIfUserId = (element, index, array) ->
+  element  if element is userId
 
 Meteor.publish 'items', (listId) ->
 	Items.find({listId: listId})
