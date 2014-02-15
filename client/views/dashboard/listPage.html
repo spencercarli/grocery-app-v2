@@ -1,7 +1,10 @@
 <template name="listPage">
 	<div class="row">
 		<div class="col-md-12">
-			<h3>{{title}}</h3>
+			<h3>
+				{{title}}
+				<a href="{{pathFor 'shareWith'}}" class="pull-right">Share List</a>
+			</h3>
 		</div>
 	</div>
 	<hr>
