@@ -10,7 +10,13 @@ Template.newList.events({
 			sharedWith: [Meteor.user()._id]
 		}
 
-		list._id = Lists.insert(list);
-		Router.go('listPage', list);
+		// list._id = Lists.insert(list);
+		Meteor.call('addList', list, function(error, result){
+			if (error)
+				alert('uhhh');
+
+			list._id = result;
+			Router.go('listPage', list);
+		});
 	}
 });
