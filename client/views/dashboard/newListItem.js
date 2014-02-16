@@ -11,7 +11,8 @@ Template.newListItem.events({
 			submitted: new Date()
 		}
 
-		Items.insert(item);
+		// Items.insert(item);
+		Meteor.call('addItem', item);
 		x.val("");
 	}
 });
