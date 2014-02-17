@@ -4,7 +4,6 @@ Template.newList.events({
 		var name = $('[name=listName]');
 
 		var list = {
-			submitted: new Date(),
 			title: name.val(),
 			owner: Meteor.user()._id,
 			sharedWith: [Meteor.user()._id]
